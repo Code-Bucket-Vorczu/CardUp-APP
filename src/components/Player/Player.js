@@ -19,7 +19,7 @@ export default function Player(props) {
             ELO FACEIT: {props.games.csgo.faceit_elo}<br/>
             INGAME NICK: {props.games.csgo.game_player_name}<br/>
             STEAM NICK: {props.steam_nickname}<br/>
-            MAŁPA PREMIUM ?: {props.memberships[0]}<br/>
+            MAŁPA PREMIUM ?: {props.memberships[0]}<br/> 
         </div>
     )
 }
