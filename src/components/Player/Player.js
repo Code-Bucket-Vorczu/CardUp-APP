@@ -3,7 +3,7 @@ import StatBox from '../StatsBox/StatBox'
 import {countrySinffer} from '../../status/Countries'
 import MapBox from '../MapBox/MapBox'
 
- 
+  
 
 export default function Player(props) {
     return (

@@ -7,7 +7,7 @@ export default function SingleMap(props) {
                 <div className='h-24'>
                     <img src={props.img_regular}  className=' relative w-32 h-20 border-2 border-gray-100 hover:border-gray-500'/> 
                     <span>{props.label}</span>
-                </div>
+                </div> 
 
                 <div className='text-left flex flex-col p-2'>                
                  <span>ROZEGRANA: {props.stats['Matches']}</span>     

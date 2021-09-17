@@ -11,7 +11,7 @@ export default function MapBox(infoPack) {
 
     
 
-    return (
+    return ( 
         <div>
             <div className=' bg-red-400 pt-1 flex rounded-xl cursor-pointer  mt-5 text-right pl-8 pr-8 -mb-9 w-24 h-10'>
                 RANDOM

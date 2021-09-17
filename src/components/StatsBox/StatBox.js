@@ -25,7 +25,7 @@ export default function StatBox(infoPack) {
                     NIE ZAGRAŁ: {firstPack.infractions.qm_not_checkedin}<br/>
                     WYKICKOWANY: {firstPack.infractions.qm_not_voted}<br/>
                     
-                </div>
+                </div> 
 
                 <div className='text-left flex flex-col pr-5'>
                 <span>INGAME NICK: {firstPack.games.csgo.game_player_name}</span>
