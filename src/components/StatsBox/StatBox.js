@@ -3,6 +3,7 @@ import React from 'react'
 export default function StatBox(infoPack) {
     const firstPack = infoPack[0];
     const secondPack = infoPack[1];
+    const thirdPack = infoPack[2];
 
     const scoreDisplay = scoreObj =>{
         const score = []
@@ -48,7 +49,17 @@ export default function StatBox(infoPack) {
                 </div>
 
                 <div className='text-left flex flex-col pr-5'>
-                    <span>OSTATNIA GRA</span>
+                    <span>OSTATNIA GRA : </span>
+                    <div className='flex-row'>
+                    <img src={thirdPack.voting.map.entities[0].image_lg} className='w-32 h-20 border-2 border-gray-100 hover:border-gray-500' />
+                    <div>
+                    <span>OSTATNIA GRA : {thirdPack.voting.map.pick[0]}</span>
+                    </div>
+                    </div>
+                    
+
+
+                    <span>{console.log(thirdPack.voting.map)}</span> 
                     
                 </div>
                 
