@@ -20,10 +20,10 @@ export default function StatBox(props) {
             </div>
             <div className='w-100 bg-red-400 p-3 flex rounded-xl cursor-pointer  mt-5 '>
                 <div className='text-left flex flex-col pr-10'>
-                    AFK: {playerInfo.afk}<br/>
-                    LEAVER: {playerInfo.leaver}<br/>
-                    NIE ZAGRAŁ: {playerInfo.qm_not_checkedin}<br/>
-                    WYKICKOWANY: {playerInfo.kicked}<br/>
+                    AFK: {playerInfo.infraction_pack.afk}<br/>
+                    LEAVER: {playerInfo.infraction_pack.leaver}<br/>
+                    NIE ZAGRAŁ: {playerInfo.infraction_pack.que_not_checkedin}<br/>
+                    WYKICKOWANY: {playerInfo.infraction_pack.kicked}<br/>
                     
                 </div> 
 
