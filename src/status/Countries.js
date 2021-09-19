@@ -9,7 +9,7 @@ const statusMsg = [{
 
 
 const countrySinffer = flagCode =>{
-    return statusMsg.filter(x => x.code == flagCode)
+    return statusMsg.find(x => x.code === flagCode)
 }
 
 export { countrySinffer };
