@@ -79,7 +79,7 @@ function App() {
       </div>
       {isCallOK.callStatusOk? <></>: <SearchAlert {...isCallOK} onAlertClose={onAlertCloseHandler}/>}
       {incPlayerData.map(el => <Player {...el[0]} />)}
-      <Player {...mockSinglePlayerApiData()} /> 
+      {/* <Player {...mockSinglePlayerApiData()} />  */}
 
       
       

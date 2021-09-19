@@ -1,9 +1,12 @@
 import React from 'react'
+import {mapSinffer} from '../../status/Maps.js';
+import {UnixToDate} from '../../status/DateTime.js'
 
 export default function StatBox(props) {
     const playerInfo = props.playerInfo;
     const statsInfo = props.playerStats;
     const lastMatchInfo = props.lastMatchInfo;
+
 
     const scoreDisplay = scoreObj =>{
         const score = []
@@ -47,7 +50,20 @@ export default function StatBox(props) {
                     <span>K/D: {statsInfo.totalKD}</span>
                     <span>HS%: {statsInfo.totalHsProc}%</span>
                 </div>
+                
+                <div className='text-left flex flex-col pr-5'>
+                    <span>OSTATNI MECZ: {lastMatchInfo.mapPicked[0]}</span>
+                    <img src={mapSinffer(lastMatchInfo.mapPicked[0]).img_Url} width='180px' alt="info" className=' relative w-32 h-20 border-2 border-gray-100 hover:border-gray-500'/>
+                </div>
 
+                <div className='text-left flex flex-col pr-5'>
+                    <span>INFO: {lastMatchInfo.matchTypeName} {lastMatchInfo.matchType} BY - {lastMatchInfo.organizer} </span>  
+
+                    <span>DATA: {UnixToDate(lastMatchInfo.startDate).fullDate}</span>  
+                    <span>GODZINA STARTU: {UnixToDate(lastMatchInfo.startDate).fullTime}</span>  
+
+
+                </div>
                
                 
             </div>
