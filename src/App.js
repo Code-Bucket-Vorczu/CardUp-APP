@@ -1,25 +1,13 @@
 import './App.scss';
 import "tailwindcss/tailwind.css"
 
+import {mockSinglePlayerApiData} from './Mock/SingleplayerApiRes.js'
 import { useEffect, useRef, useState } from 'react';
 import Player from './components/Player/Player';
 import Axios from 'axios';
 import SearchAlert from './components/UI/SearchAlert/SearchAlert';
 
 
-const mocketPlayersNames = [{
-  id: 1,
-  name: 'mr_eMS'
-},
-{
-  id: 2,
-  name: 'Bluu_e'
-},
-{
-  id:3,
-  name: 'Chrispeusz'
-}
-]
 
 function App() {
   const [isCallOK, setisCallOK] = useState({
@@ -73,7 +61,6 @@ function App() {
         setincPlayerData(localData) 
   }
 
-   
   return (
     <div className="App">      
 
@@ -91,13 +78,12 @@ function App() {
       >ŚLEDŹ GRACZA!</button>
       </div>
       {isCallOK.callStatusOk? <></>: <SearchAlert {...isCallOK} onAlertClose={onAlertCloseHandler}/>}
+       <Player {...mockSinglePlayerApiData()} /> 
+
+      
       
 
-
-      
-
-
-      {incPlayerData.map(el => <Player {...el} />)}
+      {/* {incPlayerData.map(el => <Player {...el} />)} */}
     </div>
   );
 }

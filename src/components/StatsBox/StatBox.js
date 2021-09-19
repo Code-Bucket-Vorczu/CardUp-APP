@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function StatBox(infoPack) {
-    const firstPack = infoPack[0];
-    const secondPack = infoPack[1];
-    const thirdPack = infoPack[2];
+export default function StatBox(props) {
+    const playerInfo = props.playerInfo;
+    const statsInfo = props.playerStats;
+    const lastMatchInfo = props.lastMatchInfo;
 
     const scoreDisplay = scoreObj =>{
         const score = []
@@ -20,48 +20,35 @@ export default function StatBox(infoPack) {
             </div>
             <div className='w-100 bg-red-400 p-3 flex rounded-xl cursor-pointer  mt-5 '>
                 <div className='text-left flex flex-col pr-10'>
-                    AFK: {firstPack.infractions.afk}<br/>
-                    LEAVER: {firstPack.infractions.leaver}<br/>
-                    NIE ZAGRAŁ: {firstPack.infractions.qm_not_checkedin}<br/>
-                    WYKICKOWANY: {firstPack.infractions.qm_not_voted}<br/>
+                    AFK: {playerInfo.afk}<br/>
+                    LEAVER: {playerInfo.leaver}<br/>
+                    NIE ZAGRAŁ: {playerInfo.qm_not_checkedin}<br/>
+                    WYKICKOWANY: {playerInfo.kicked}<br/>
                     
                 </div> 
 
                 <div className='text-left flex flex-col pr-5'>
-                <span>INGAME NICK: {firstPack.games.csgo.game_player_name}</span>
-                <span>LVL FACEIT: {firstPack.games.csgo.skill_level_label}</span>
-                <span>ELO FACEIT: {firstPack.games.csgo.faceit_elo}</span>
-                <span>STATUS KONTA: {firstPack.memberships[0]}</span>
+                <span>INGAME NICK: {playerInfo.nickname}</span>
+                <span>LVL FACEIT: {playerInfo.accLvl}</span>
+                <span>ELO FACEIT: {playerInfo.elo}</span>
+                <span>STATUS KONTA: {playerInfo.membership}</span>
                 </div>
              
                 <div className='text-left flex flex-col pr-5'>
-                    <span>ROZEGRANYCH GIER: {secondPack.lifetime["Matches"]}</span>
-                    <span>WYGRANE GRY: {secondPack.lifetime["Wins"]}</span>
-                    <span>WYGRANYCH W %: {secondPack.lifetime["Win Rate %"]}%</span>
-                    <span>TOP SERIA: {secondPack.lifetime["Longest Win Streak"]}</span>
+                    <span>ROZEGRANYCH GIER: {statsInfo.totalMatches}</span>
+                    <span>WYGRANE GRY: {statsInfo.totalWins}</span>
+                    <span>WYGRANYCH W %: {statsInfo.totalWinRatio}%</span>
+                    <span>TOP SERIA: {statsInfo.longestWinStreak}</span>
                 </div>
 
                 <div className='text-left flex flex-col pr-5'>
                     <span>OSTATNIE 5 MECZY</span>
-                    <span>WYNIKI : {scoreDisplay(secondPack.lifetime["Recent Results"])}</span>
-                    <span>K/D: {secondPack.lifetime["Average K/D Ratio"]}</span>
-                    <span>HS%: {secondPack.lifetime["Average Headshots %"]}%</span>
+                    <span>WYNIKI : {scoreDisplay(statsInfo.lastFiveMatches)}</span>
+                    <span>K/D: {statsInfo.totalKD}</span>
+                    <span>HS%: {statsInfo.totalHsProc}%</span>
                 </div>
 
-                <div className='text-left flex flex-col pr-5'>
-                    <span>OSTATNIA GRA : </span>
-                    <div className='flex-row'>
-                    <img src={thirdPack.voting.map.entities[0].image_lg} className='w-32 h-20 border-2 border-gray-100 hover:border-gray-500' />
-                    <div>
-                    <span>OSTATNIA GRA : {thirdPack.voting.map.pick[0]}</span>
-                    </div>
-                    </div>
-                    
-
-
-                    <span>{console.log(thirdPack.voting.map)}</span> 
-                    
-                </div>
+               
                 
             </div>
         </div>

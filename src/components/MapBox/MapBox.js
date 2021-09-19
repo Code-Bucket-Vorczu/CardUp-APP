@@ -5,8 +5,8 @@ import SingleMap from './SingleMap/SingleMap';
 
 
 
-export default function MapBox(infoPack) {
-    const secondPack = infoPack[1].segments;
+export default function MapBox(props) {
+    const mapiInfo = props.playerStats.totalMapInfo
 
 
     
@@ -19,7 +19,7 @@ export default function MapBox(infoPack) {
             
 
             <div className='w-100 bg-red-400 p-3 flex rounded-xl cursor-pointer  mt-5 flex-wrap justify-between'>
-                {secondPack.map(el => el.mode === "5v5"? <SingleMap {...el}/> : <></>)}
+                {mapiInfo.map(el => el.mode === "5v5"? <SingleMap {...el}/> : <></>)}
             </div>
 
 
@@ -29,7 +29,7 @@ export default function MapBox(infoPack) {
             <div className='w-100 bg-red-400 p-3 rounded-xl cursor-pointer  mt-5 flex-wrap justify-between'>
                 <span>PREMADE</span>
                 <div className='flex '>
-                {secondPack.map(el => el.mode !== "5v5"? <SingleMap {...el}/> : <></>)}
+                {mapiInfo.map(el => el.mode !== "5v5"? <SingleMap {...el}/> : <></>)}
                 </div>
             </div>
         </div>
