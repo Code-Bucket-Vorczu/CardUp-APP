@@ -78,12 +78,13 @@ function App() {
       >ŚLEDŹ GRACZA!</button>
       </div>
       {isCallOK.callStatusOk? <></>: <SearchAlert {...isCallOK} onAlertClose={onAlertCloseHandler}/>}
-       <Player {...mockSinglePlayerApiData()} /> 
+      {incPlayerData.map(el => <Player {...el[0]} />)}
+      <Player {...mockSinglePlayerApiData()} /> 
 
       
       
 
-      {/* {incPlayerData.map(el => <Player {...el} />)} */}
+      
     </div>
   );
 }
